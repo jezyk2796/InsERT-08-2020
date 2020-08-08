@@ -1,18 +1,21 @@
 // variables
-$morning-bg-color: #85FFBD;
-$morning-bg-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+$widget-container-bg: rgba(0, 0, 0, .2);
 
-$noon-bg-color: #FBAB7E;
-$noon-bg-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-
-$night-bg-color: #6b74e8;
-$night-bg-image: linear-gradient(22deg, #6b74e8 20%, #0008ee 100%);
+$font-color: #fff;
+$main-font: 'Montserrat Alternates', sans-serif;
 
 // style
 .weather-widget-container {
+  box-sizing: border-box;
   width: 80vw;
-  height: 20rem;
 
-  background-image: $night-bg-image;
+  background-color: $widget-container-bg;
   border-radius: 2.125rem;
+  color: $font-color;
+  font-family: $main-font;
+  font-weight: 300;
+  padding: .625rem .938rem;
+}
+
+.weather-widget-row {
 }

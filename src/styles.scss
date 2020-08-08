@@ -1,6 +1,9 @@
-// basic reset css
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;300;500&display=swap');
+
+// sass partials
+@import 'style/reset';
+
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  @include reset-css;
 }
