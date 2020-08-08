@@ -1,0 +1,18 @@
+// variables
+$morning-bg-color: #85FFBD;
+$morning-bg-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+
+$noon-bg-color: #FBAB7E;
+$noon-bg-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+
+$night-bg-color: #6b74e8;
+$night-bg-image: linear-gradient(22deg, #6b74e8 20%, #0008ee 100%);
+
+// style
+.weather-widget-container {
+  width: 80vw;
+  height: 20rem;
+
+  background-image: $night-bg-image;
+  border-radius: 2.125rem;
+}
