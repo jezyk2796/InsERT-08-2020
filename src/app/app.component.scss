@@ -15,5 +15,16 @@ $night-bg-image: linear-gradient(22deg, #6b74e8 20%, #0008ee 100%);
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.morning-background {
   background-image: $morning-bg-image;
+}
+
+.afternoon-background {
+  background-image: $afternoon-bg-image;
+}
+
+.night-background {
+  background-image: $night-bg-image;
 }
