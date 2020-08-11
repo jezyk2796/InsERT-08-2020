@@ -12,13 +12,13 @@ export class AppComponent implements OnInit {
 
   partOfDay: string;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.http.getWeatherData().subscribe(data => {
       this.setPartOfDay(data);
     });
   }
 
-  setPartOfDay(time) {
+  setPartOfDay(time): void {
     const currentDate = new Date(time.dt * 1000);
     const currentHour = currentDate.getHours();
     if (currentHour >= 5 && currentHour <= 11) {
@@ -30,7 +30,7 @@ export class AppComponent implements OnInit {
     }
   }
 
-  setBackground() {
+  setBackground(): string {
     return `${this.partOfDay}-background`;
   }
 
