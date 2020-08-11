@@ -24,7 +24,7 @@ export class WeatherWidgetMainComponent implements OnInit {
   }
 
   getWeatherIcon(iconId: string): string {
-    return `http://openweathermap.org/img/wn/${iconId}@2x.png`;
+    return `https://openweathermap.org/img/wn/${iconId}@2x.png`;
   }
 
   getTemperature(value: number): string {
