@@ -4,15 +4,195 @@ $widget-container-bg: rgba(0, 0, 0, .2);
 $font-color: #fff;
 $main-font: 'Montserrat Alternates', sans-serif;
 
+$button-border-color: #fff;
+
 // style
+.font-weight-500 {
+  font-weight: 500;
+}
+
 .weather-widget-container {
   box-sizing: border-box;
   width: 80vw;
-
+  //max-width: 31.25rem;
+  max-width: 25rem;
   background-color: $widget-container-bg;
   border-radius: 2.125rem;
   color: $font-color;
   font-family: $main-font;
   font-weight: 300;
   padding: .625rem .938rem;
+}
+
+.weather-widget-row {
+  text-align: center;
+}
+
+.time-and-date {
+  font-size: .75rem;
+}
+
+.location-name {
+  font-size: 1.875rem;
+  padding: 1rem 0 0 0;
+}
+
+.weather-icon {
+  img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.weather-description {
+  font-size: 1.563rem;
+  padding: 0 0 .5rem 0;
+}
+
+.temperature {
+  font-size: 1.375rem;
+  padding: 0 0 .625rem 0;
+}
+
+.temp-feels-like {
+  padding-bottom: .375rem;
+}
+
+.temp-min-max {
+  font-size: .875rem;
+  padding: 0 0 .875rem 0;
+}
+
+.pressure {
+  padding: 0 0 .375rem 0;
+}
+
+.humidity {
+  padding: 0 0 .375rem 0;
+}
+
+.cloudiness {
+  padding: 0 0 .625rem 0;
+}
+
+.refresh-button {
+  border-top: 1px solid $button-border-color;
+
+  button {
+    width: 100%;
+    height: 100%;
+    color: $font-color;
+    font-family: $main-font;
+    font-weight: 700;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0.625rem 0 .375rem 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .time-and-date {
+    font-size: .875rem;
+  }
+
+  .location-name {
+    font-size: 2.375rem;
+    padding: 1rem 0 0 0;
+  }
+
+  .weather-icon {
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+
+  .weather-description {
+    font-size: 1.875rem;
+  }
+
+  .temperature {
+    font-size: 1.625rem;
+  }
+
+  .temp-feels-like {
+    font-size: 1.375rem;
+  }
+
+  .temp-min-max {
+    font-size: 1rem;
+  }
+
+  .pressure {
+    font-size: 1.375rem;
+  }
+
+  .humidity {
+    font-size: 1.375rem;
+  }
+
+  .cloudiness {
+    font-size: 1.375rem;
+  }
+
+  .refresh-button {
+    button {
+      font-size: 1.375rem;
+      padding: 0.875rem 0 .5rem 0;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .time-and-date {
+    font-size: 1rem;
+  }
+
+  .location-name {
+    font-size: 2.5rem;
+  }
+
+  .weather-icon {
+    img {
+      width: 140px;
+      height: 140px;
+    }
+  }
+
+  .weather-description {
+    font-size: 2rem;
+  }
+
+  .temperature {
+    font-size: 1.875rem;
+  }
+
+  .temp-feels-like {
+    font-size: 1.5rem;
+  }
+
+  .temp-min-max {
+    font-size: 1.125rem;
+  }
+
+  .pressure {
+    font-size: 1.5rem;
+  }
+
+  .humidity {
+    font-size: 1.5rem;
+  }
+
+  .cloudiness {
+    font-size: 1.5rem;
+  }
+
+  .refresh-button {
+    button {
+      font-size: 1.5rem;
+      padding: 1rem 0 .625rem 0;
+    }
+  }
 }

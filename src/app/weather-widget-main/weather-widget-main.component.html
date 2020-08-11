@@ -1,8 +1,41 @@
-<div class="weather-widget-container">
-  <div class="weather-widget-row">
-    pobrano o: {{date | date:'HH:mm:ss'}}
+<ng-container *ngIf="weatherData">
+  <div class="weather-widget-container">
+    <div class="weather-widget-row time-and-date">
+      updated at: {{timeOfApiCall | date:'HH:mm:ss'}}
+    </div>
+    <div class="weather-widget-row time-and-date">
+      on: {{timeOfApiCall | date:'dd.MM.yyyy'}}
+    </div>
+    <div class="weather-widget-row location-name font-weight-500">
+      {{weatherData?.name}}
+    </div>
+    <div class="weather-widget-row weather-icon">
+      <img [src]="getWeatherIcon(weatherData?.weather[0].icon)">
+    </div>
+    <div class="weather-widget-row weather-description font-weight-500">
+      {{weatherData?.weather[0].main}}
+    </div>
+    <div class="weather-widget-row temperature font-weight-500">
+      {{getTemperature(weatherData?.main.temp)}}&deg;C
+    </div>
+    <div class="weather-widget-row temp-feels-like">
+      Feels like {{getTemperature(weatherData?.main.feels_like)}}&deg;C
+    </div>
+    <div class="weather-widget-row temp-min-max">
+      min {{getTemperature(weatherData?.main.temp_min)}}&deg;C | max {{getTemperature(weatherData?.main.temp_max)}}&deg;C
+    </div>
+    <div class="weather-widget-row pressure">
+      Pressure {{weatherData?.main.pressure}} hPa
+    </div>
+    <div class="weather-widget-row humidity">
+      Humidity {{weatherData?.main.humidity}}%
+    </div>
+    <div class="weather-widget-row cloudiness">
+      Cloudiness {{weatherData?.clouds.all}}%
+    </div>
+    <div class="weather-widget-row refresh-button">
+      <button (click)="refreshData()">Click to refresh</button>
+    </div>
   </div>
-  <div class="weather-widget-row">
-    dnia: {{date | date:'dd.MM.yyyy'}}
-  </div>
-</div>
+
+</ng-container>

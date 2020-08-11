@@ -10,20 +10,28 @@ export class WeatherWidgetMainComponent implements OnInit {
 
   constructor(private http: HttpWeatherService) {}
 
-  date: number;
-  weatherData: any;
+  weatherData;
+  timeOfApiCall;
 
   ngOnInit() {
-    this.http.getWeatherData().subscribe(data => this.weatherData = data);
+    this.http.getWeatherData().subscribe(data => {
+      this.weatherData = data;
+      this.timeOfApiCall = this.weatherData.dt * 1000;
+    });
   }
 
-  // getWeatherData() {
-  //   fetch(this.apiCall)
-  //     .then(response => response.json())
-  //     .then(data => {
-  //       console.log(data); // to delete
-  //
-  //       this.date = data.dt * 1000;
-  //     });
-  // }
+  getWeatherIcon(iconId) {
+    return `http://openweathermap.org/img/wn/${iconId}@2x.png`;
+  }
+
+  getTemperature(value) {
+    return (value - 273.15).toFixed(0);
+  }
+
+  refreshData() {
+    this.http.getWeatherData().subscribe(data => {
+      this.weatherData = data;
+      this.timeOfApiCall = Date.now();
+    });
+  }
 }

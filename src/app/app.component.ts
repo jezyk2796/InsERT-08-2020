@@ -14,11 +14,11 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.http.getWeatherData().subscribe(data => {
-      this.getPartOfDay(data);
+      this.setPartOfDay(data);
     });
   }
 
-  getPartOfDay(time) {
+  setPartOfDay(time) {
     const currentDate = new Date(time.dt * 1000);
     const currentHour = currentDate.getHours();
     if (currentHour >= 5 && currentHour <= 11) {
