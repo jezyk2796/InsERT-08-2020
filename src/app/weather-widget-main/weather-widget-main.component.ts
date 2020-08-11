@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpWeatherService } from '../http-weather.service';
+import { interval } from 'rxjs';
 
 @Component({
   selector: 'app-weather-widget-main',
@@ -18,6 +19,8 @@ export class WeatherWidgetMainComponent implements OnInit {
       this.weatherData = data;
       this.timeOfApiCall = this.weatherData.dt * 1000;
     });
+
+    this.getWeatherDataInterval();
   }
 
   getWeatherIcon(iconId) {
@@ -32,6 +35,16 @@ export class WeatherWidgetMainComponent implements OnInit {
     this.http.getWeatherData().subscribe(data => {
       this.weatherData = data;
       this.timeOfApiCall = Date.now();
+    });
+  }
+
+  getWeatherDataInterval() {
+    const source = interval(300000);
+    source.subscribe(() => {
+      this.http.getWeatherData().subscribe(data => {
+        this.weatherData = data;
+        this.timeOfApiCall = Date.now();
+      });
     });
   }
 }
